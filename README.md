@@ -1,2 +1,1 @@
-#helo world 123
-test 2 
+#.basaD jan struktura afersisht qysh mu kan
