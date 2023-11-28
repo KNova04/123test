@@ -1,0 +1,58 @@
+
+        body {margin: 0;}
+        main{
+            background-color: brown;            
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            height: 10%;
+            padding-top: 10px;
+        }
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+            border: solid 1px black;;
+            background-image: url(/Users/metshehu/Documents/uniwork/Html-projects/Book-Store/imgs/books.jpeg);
+            width: 300px;
+
+        }
+        .entryfiled{
+            width: 250px; margin-top: 15px;
+             padding: 8px;  border: 1; 
+             box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+              border-radius:10px;
+              font-family:'Times New Roman', Times, serif;
+              font-size: inherit;
+            }
+        img{align-self: center;}
+        .entryfiled:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+  background-color: #3F51B5;
+} 
+
+        button {
+            width: 250px; text-align: center; align-self: center; margin-top: 10px;
+        /* remove default behavior */
+        appearance:none;
+        -webkit-appearance:none;
+
+        /* usual styles */
+        padding:10px;
+        border:none;
+        background-color:#3F51B5;
+        color:#fff;
+        font-weight:600;
+        border-radius:5px;
+
+
+
+        }
