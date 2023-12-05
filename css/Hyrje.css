@@ -1,14 +1,16 @@
 
-        body {margin: 0;}
+        body {
+            margin: 0%;
+        }
+        
         main{
-            background-color: brown;            
+                       
             display: flex;
             justify-content: center;
             margin: 0;
         }
 
         header {
-            background-color: black;
             color: #fff;
             text-align: center;
             height: 10%;
@@ -16,14 +18,13 @@
         }
 
         .box{
+            background-image: url(imgs\booklogo.jpeg);
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             text-align: center;
-            border: solid 1px black;;
-            background-image: url(/Users/metshehu/Documents/uniwork/Html-projects/Book-Store/imgs/books.jpeg);
+            border: solid 1px black;
             width: 300px;
-
         }
         .entryfiled{
             width: 250px; margin-top: 15px;
@@ -52,7 +53,15 @@
         color:#fff;
         font-weight:600;
         border-radius:5px;
+        }
 
-
-
+        .About{
+            color: #fff;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                align-items: center;
+                align-content: stretch;
+            
         }
