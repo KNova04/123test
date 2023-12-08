@@ -2,26 +2,35 @@ body{
     margin: 2%;
     padding: 0%;
 }
-.Serchbar{
-    display:flex;
-    justify-content: center;
+
+.topnav {
+    overflow: auto;
+    background-color: #e9e9e9;
+  }
+
+  .topnav input[type=text] {
+    width: 1000px;
+    height: 20px;
+    float:right;
+    padding: 10px;
+    border: none;
+    margin-top: 0px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
 
 
-}
-
-
-.header {
-    background: #fc035a;
-    color: orange;
-    font-size: 40px;
-    height: 50px;
-}
 .mainbody{
-    margin-top: 50px;
     display: flex;
-    justify-content: end;
     flex-direction: row-reverse;
-    flex-wrap: wrap;
+    align-content: center;
+
+}
+.mainbody .bow{
+    display: flex;
+    justify-items: end;
+    align-items: flex-end;
 }
 .randoms{
     display: flex;
@@ -34,7 +43,10 @@ body{
     height: 500px;
     margin-top: 30px;
     justify-content: space-around;
-    background-color: blue;
+    background: transparent;
+    border: 2px solid black;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
 
 }
 .randombook{
@@ -73,7 +85,7 @@ body{
     flex-direction: column;
     margin-right: 10px;
     width: 250px;
-    
+    align-content: flex-start;
     height: 600px;
 
   }
