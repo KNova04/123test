@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,58 +20,110 @@
     background-image: url(imgs/backdrop-book-backgrounds-for-video-meetings-1_1340x.webp    );
     background-position: center;
     background-size: cover;
-    position: relative;
+    position: relative; 
     width: fit-content;
         }
     </style>
 </head>
 <body>
     <header>
-       
         <div class="topnav">
+            <img src="imgs/booklogo.png" alt="">
             <h2>Books with Anton</h2>
-             <input type="text" placeholder="Search..">
+            <input type="text" placeholder="Search..">
+            <button style="height: 45px; margin-top: 40px;">Search</button>
           </div>
+ 
+        <nav>
+            <ul>
+                <li><a href="#home">Books</a></li>
+                <li><a href="#about">Fiction</a></li>
+                <li><a href="#services">Nonfiction</a></li>
+                <li><a href="#contact">eBooks</a></li>
+                <li><a href="#home">Audiobooks</a></li>
+                <li><a href="#about">Teens & YA</a></li>
+                <li><a href="#services">Kids</a></li>
+                <li><a href="#contact">Stationery & Gifts</a></li>                              
+                <li><a href="#contact">Music & Movies</a></li>                     
+            </ul>
+        </nav>
 </header>
 </div>
 <div class="mainbody">
-    <div class="sidebar">
-        <a><img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" style="height: 300px; width: 200px;"></a>
-        <a><img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" style="height: 300px; width: 200px;"></a>
-        <a><img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" style="height: 300px; width: 200px;"></a>
-    </div>
-    <div class="randombook">
-            <a href="" target="_blank"><img src="imgs/PERCY-CHALICE-FINALcover2.21-final.jpg" alt="goodbook"></a>
-            <p id="p">After saving the world multiple times, Percy Jackson is hoping to have a normal senior year.
-                Unfortunately, the gods aren’t quite done with him.
-                Percy will have to fulfill three quests in order to get the necessary three letters of recommendation from Mount Olympus for college. 
-                
-                The first quest is to help Zeus’s cup-bearer retrieve his goblet before it falls into the wrong hands.
-                Can Percy, Grover, and Annabeth find it in time? 
-                
-                Readers new to Percy Jackson (this book can be enjoyed as a standalone) and 
-                fans who have been awaiting this reunion for more than a decade will delight equally in this latest hilarious take on Greek mythology.</p>
-        </div>
+    
+    <img src="imgs/bookheder.jpg" style="height: 500px; width: 100%;" class="headerimg">
+
     <div class="bow">
-        <div style="text-align:center; padding: 30px;">
-            <img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" style="height: 300px; width: 200px;">
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <div class="slider">
+          <div class="slids" style="width: 160px;">
+            <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
+            <h5> Title</h5>
+            <p > DESCRIPTION </p>
+          </div>
+          <div class="slids">
+            <img id="2"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
+            <h5> Title</h5>
+            <p > DESCRIPTION </p>
+          </div>
+          <div class="slids">
+            <img id="3"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
+            <h5> Title</h5>
+            <p > DESCRIPTION </p>
+          </div>
+          <div class="slids">
+            <img id="4"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
             <h5> title</h5>
             <p > DESCRIPTION </p>
-        </div>
-        <div style="text-align:center; padding: 30px;">
-            <img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" style="height: 300px; width: 200px;">
-            <h5> title</h5>
+          </div>
+          <div class="slids">
+            <img id="5"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
+            <h5> Title</h5>
             <p > DESCRIPTION </p>
-        </div>
-        <div style="text-align:center; padding: 30px;">
-            <img src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" style="height: 300px; width: 200px;">
-            <h5> title</h5>
+          </div>
+          <div class="slids">
+            <img id="6"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
+            <h5> Title</h5>
             <p > DESCRIPTION </p>
+          </div>
         </div>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+        
+
     </div>
 </div>
 
 </div>
+
+
+
+</body>
+<script>
+
+
+
+
+let currentImage = 0 
+const totalImages = 2 
+let a=['imgs/English_Harry_Potter_7_Epub_9781781100264.jpg',"imgs/they-both-die-at-the-end-9781471166204_hr.jpg","imgs/PERCY-CHALICE-FINALcover2.21-final.jpg"]
+function changeImage(direction) {
+    currentImage += direction;
+
+    if (currentImage > totalImages) {
+        currentImage = 0;
+    } else if (currentImage < 0){
+        currentImage = totalImages;
+    }
+    for(let i=1;i<=6;i++){
+    const imageElement1= document.getElementById(""+i);
+    imageElement1.src =a[currentImage];
+}
+
+}
+
+</script>
+</html>
 
 
 
