@@ -1,7 +1,5 @@
-*{
-    padding: auto;
-    margin: auto;
-    width: auto;
+body{
+    padding: 0%;
 }
 
 
@@ -13,7 +11,7 @@
     justify-content: space-between;
   }
 .topnav input[type=text] {
-    width: 1000px;
+
     height: 20px;
     float:right;
     padding: 10px;
@@ -22,13 +20,16 @@
     font-size: 20px;
     font-weight: 500;
     margin-left: 30%;
+    width: 600px;
   }
 .topnav img{margin: 0;}
-.headerimg{margin: 0; }
-
+.headerimg{margin: 0; width: 1000px;}
+header{  max-width:1431px;}
 nav {
   background-color: #fff; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+}
 
 ul {
   list-style-type: none;
@@ -36,17 +37,17 @@ ul {
   padding: 0;
   overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 li {
-  margin-right: 10px;
+
 }
 
 li:last-child {
   margin-right: 0;
 }
-
+main{overflow: hidden;}
 li a {
   display: block;
   color: #333;
@@ -97,7 +98,7 @@ h2 {
 .slider img{ margin: 0; margin-right:70px; height: 250px;}
 .slider {
   display: flex;
- 
+  justify-content: space-between;
 }
 
 .slide {
@@ -188,5 +189,5 @@ h2 {
 .slids{
   text-align:center; padding: 30px;
   width: 160px;
-  margin-right: 100px;
+  margin-right: 90px;
 }
