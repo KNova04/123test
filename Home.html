@@ -20,15 +20,17 @@
     background-image: url(imgs/backdrop-book-backgrounds-for-video-meetings-1_1340x.webp    );
     background-position: center;
     background-size: cover;
-    position: relative; 
-    width: fit-content;
-        }
+    position: absolute; 
+    max-width:1431px;
+    
+}
+
     </style>
 </head>
 <body>
     <header>
         <div class="topnav">
-            <img src="imgs/booklogo.png" alt="">
+            <img src="imgs/booklogo.png"   alt="">
             <h2>Books with Anton</h2>
             <h3>"Unlocking Worlds, One Page at a Time –
               Your Online Haven for Endless Stories!"</h3>
@@ -44,16 +46,14 @@
                 <li><a href="#contact">eBooks</a></li>
                 <li><a href="#home">Audiobooks</a></li>
                 <li><a href="#about">Teens & YA</a></li>
-                <li><a href="#services">Kids</a></li>
-                <li><a href="#contact">Stationery & Gifts</a></li>                              
-                <li><a href="#contact">Music & Movies</a></li>                     
+                <li><a href="#services">Kids</a></li>              
             </ul>
         </nav>
 </header>
 </div>
-<div class="mainbody">
+<main>
     
-    <img src="imgs/bookheder.jpg" style="height: 500px; width: 100%;" class="headerimg">
+    <img src="imgs/bookheder.jpg" style="height: 500px; width: 1431px;" class="headerimg">
 
     <div class="bow">
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
@@ -83,18 +83,13 @@
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
-          <div class="slids">
-            <img id="6"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
         </div>
         <button class="next" onclick="changeImage(1)">&#10095;</button>
     </div>
         
 
     </div>
-</div>
+</main>
 
 </div>
 
@@ -117,7 +112,7 @@ function changeImage(direction) {
     } else if (currentImage < 0){
         currentImage = totalImages;
     }
-    for(let i=1;i<=6;i++){
+    for(let i=1;i<=5;i++){
     const imageElement1= document.getElementById(""+i);
     imageElement1.src =a[currentImage];
 }
