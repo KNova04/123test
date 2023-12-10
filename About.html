@@ -1,90 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Your Book Store Name</title>
+    <title>About Us - Your Website Name</title>
     <style>
-        main {
+        body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #f7f7f7;
+            position: relative;
         }
+        header{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 10%;
+        padding: 10px 5px;
+        display: flex;
+        align-items: center;
+        z-index: 99;
+        border: 2px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5  );
+            border: none;
+    }
 
-        header {
-            background-color: brown;
-            color: #fff;
-            text-align: center;
-            height: 10%;
-            padding-top: 10px;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .container {
+            margin-left: 20px;
+            margin-top: 100px;        
         }
 
         h1 {
             color: #333;
         }
 
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-        }
-
         p {
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            line-height: 1.6;
+            color: #666;
         }
 
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
-
 <body>
 
     <header>
-        <h1>[Your Book Store Name]</h1>
-        <p>Welcome to a world of stories!</p>
+        <img src="imgs/booklogo.png" alt=""> <h2 class="lg">Books with Anton
+
+        </h2>
     </header>
 
-    <main>
-        <h2>Our Story</h2>
-        <p>[Your Book Store Name] was founded in [Year] with a simple yet profound mission: to foster a love for
-            reading and provide a space where people can explore the vast world of literature...</p>
+    <div class="container">
+        <h2>About Books with Anton</h2>
+        <p>Hey there, fellow book enthusiasts! I'm Anton, and I'm thrilled to welcome you to Books with Anton—a cozy corner of the internet dedicated to the magic of storytelling.</p>
+        <p>For me, books are more than just ink on paper; they're portals to different worlds, carriers of emotions, and sparks for deep thoughts. <br>Here at Books with Anton, I invite you to join me on a journey through the pages of timeless classics, hidden treasures, and the latest literary wonders.</p>
 
-        <h2>Our Commitment</h2>
-        <p>[Your Book Store Name] was founded in [Year] with a simple yet profound mission: to foster a love for
-            reading and provide a space where people can explore the vast world of literature...</p>
-        <h2>
-            Contact us
-        </h2>
-        <ul>
-            <p>email</p>
-            <p>phone</p>
-            <p>location</p>
-        </ul>
-        </main>
+        <h2>Our Mission</h2>
+        <p>Our mission? Simple. We want to build a community of book lovers like you, providing a space to dive into meaningful discussions about literature.<br> Let's explore diverse perspectives, dive into various genres, and together, celebrate the sheer beauty of storytelling.
+
+        </p>
+
+        <h2>Connect with Anton</h2>
+        <p>Got a book recommendation burning in your mind? Curious about a certain author or genre? Or just want to chat about the latest plot twist that rocked your world? I'm all ears! Feel free to reach out to me via email at <a href="mailto:anton@bookswithanton.com">anton@bookswithanton.com</a>. You can also catch me on social media <a href="https://www.example.com" target="_blank" rel="noopener">@AntonReads</a>.</p>
+        <h2>Creators</h2>
+        <p>Met Shehu && Kastriot Tron
+        </p>
+    </div>
+    <footer>
+        &copy; 2023 Books with Anton
+    </footer>
+
+</body>
+</html>
