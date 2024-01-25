@@ -45,7 +45,7 @@ foreach ($result  as $value) {
             <button class="cart">
               <ion-icon name="cart-outline">
             </ion-icon></button>
-            <button class="Log-in"><a href="logout.php">Log out</a</button>
+            <button class="Log-in"><a href="logout.php">Log out</a></button>
           </div>
  
         <nav>
@@ -83,7 +83,7 @@ foreach ($result  as $value) {
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
         <div class="slider">
           <div class="slids" style="width: 160px; margin-left:20px;">
-            <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
+          <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
@@ -103,7 +103,7 @@ foreach ($result  as $value) {
             <p > DESCRIPTION </p>
           </div>
           <div class="slids">
-            <img id="5"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
+            <a href="twitter.com"><img id="5"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" ></a>
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
