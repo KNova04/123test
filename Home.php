@@ -1,4 +1,15 @@
+<?php
+session_start();
 
+$mysqli = require __DIR__ . "/database.php";
+
+$sql = sprintf("SELECT * FROM Users
+                    WHERE userid = '%s'",
+                   $mysqli->real_escape_string($_SESSION["user_id"]));
+$result = $mysqli->query($sql);
+$user = $result->fetch_assoc();
+// qitu e ki kodein per userin
+?>
 
 
 
@@ -28,7 +39,7 @@
             <button class="cart">
               <ion-icon name="cart-outline">
             </ion-icon></button>
-            <button class="Log-in">Log-in</button>
+            <button class="Log-in"><a href="logout.php">Log out</a</button>
           </div>
  
         <nav>
@@ -46,16 +57,20 @@
 </div>
 <main>
     
-  <div class="Best_Seller">
+        <div class="mainpart">
+          <div class="mainbooks" style="width: 160px; ">
+            <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
+            <h5> Title</h5>
+            <p > DESCRIPTION </p>
+          </div>
 
-
-  </div>
-   
+        </div>
+ 
 
     <div class="bow">
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
         <div class="slider">
-          <div class="slids" style="width: 160px;">
+          <div class="slids" style="width: 160px; margin-left:20px;">
             <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
             <h5> Title</h5>
             <p > DESCRIPTION </p>

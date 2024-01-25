@@ -32,8 +32,17 @@
         <div class="box">
             <span class="close"><ion-icon 
                 name="close"></ion-icon></span>
+         
                 
+
+
+
+
+
+
+
         <div class="Login">
+        <form action ="loginpost.php" method="post">
             <h2>Log-in</h2>
     
             <input type="text" name="e-mail" 
@@ -55,9 +64,15 @@
                         Register
                     </a></p>
                 </div>
-             </div>
+            </form>
 
-        <div class="sign">
+        </div>
+
+
+
+
+     <form class="sign" action ="sightuppost.php" method="post">
+
         <h2>Sign-in</h2>
         
         <input type="text" 
@@ -88,7 +103,7 @@
             </a></p>
         </div>
 
-     </div>
+    </from>
          
 
         
