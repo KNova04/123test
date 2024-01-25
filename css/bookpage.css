@@ -1,0 +1,133 @@
+.product-card {
+    width: 300px; /* Adjust width as necessary */
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.product-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.kindle-price {
+    font-size: 1.2rem;
+    color: green;
+}
+
+.hardcover-price {
+    font-weight: bold;
+}
+
+.discounted {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 0.5rem;
+}
+
+.original-price {
+    font-size: 0.9rem;
+}
+
+.availability p {
+    margin: 0;
+    font-weight: normal;
+}
+
+.buy-box {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-new {
+    font-weight: bold;
+}
+
+.new-price {
+    font-size: 1.5rem;
+    color: #B12704;
+}
+
+.list-price {
+    font-size: 0.9rem;
+}
+
+.price {
+    text-decoration: line-through;
+}
+
+.delivery-details {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.quantity-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn, .buy-now-btn {
+    background-color: #FFD814;
+    border: none;
+    padding: 10px 24px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.add-to-cart-btn {
+    background-color: #f0c14b;
+}
+
+.buy-now-btn {
+    background-color: #ffa41c;
+}
+  .book-container {
+    display: flex;
+
+
+    font-family: Arial, sans-serif;
+    
+    margin-left: 15vh;
+    
+  }
+  .book-cover img {
+    width: 450px;
+    height: auto;
+
+  }
+  .inter{
+    border: 1px solid #ddd;
+    width: 40%;
+    padding: 10px;
+    height: 590px;
+    overflow: auto;
+}
+  .book-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .book-author {
+    font-style: italic;
+  }
+  .book-rating {
+    color: #f5a623; /* gold-like color for stars */
+  }
+  .book-metadata {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .book-description {
+    margin-top: 20px;
+  }

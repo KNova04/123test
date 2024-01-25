@@ -13,7 +13,7 @@ require_once __DIR__ ."/Bookmaker.php";
 $bookslist=[];
 foreach ($result  as $value) {
   // $arr[3] will be updated with each value from $arr...
-  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text']));
+  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null));
 }
 ?>
 

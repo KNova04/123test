@@ -32,15 +32,6 @@
         <div class="box">
             <span class="close"><ion-icon 
                 name="close"></ion-icon></span>
-         
-                
-
-
-
-
-
-
-
         <div class="Login">
         <form action ="loginpost.php" method="post">
             <h2>Log-in</h2>
@@ -51,8 +42,7 @@
     
             <input type="password" name="password" 
             class="entryfiled" placeholder="password" 
-            id="password">
-    
+            id="password"> 
            <div class="remembr-forgot">
             <label><input type="checkbox">
             Remember me</label>

@@ -12,8 +12,7 @@ $result = $mysqli->query($sql);
 
 $user = $result->fetch_assoc();
 
-var_dump($_POST["password"]);
-var_dump($user);
+
 if ($user) {
         
     if (password_verify($_POST["password"], $user["password_hash"])) {
@@ -22,7 +21,7 @@ if ($user) {
             session_regenerate_id();
             
             $_SESSION["user_id"] = $user["userid"];
-            
+            $_SESSION["user_isAdmin"]=$user["isadmin"];
             header("Location: index.php");
     }else{header("Location: hyrje.php");}
     
