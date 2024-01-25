@@ -3,12 +3,18 @@ session_start();
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = sprintf("SELECT * FROM Users
-                    WHERE userid = '%s'",
-                   $mysqli->real_escape_string($_SESSION["user_id"]));
+$sql = sprintf("SELECT * FROM `BookS`");
 $result = $mysqli->query($sql);
-$user = $result->fetch_assoc();
-// qitu e ki kodein per userin
+//$books = $result->fetch_assoc();
+
+
+require_once __DIR__ ."/Bookmaker.php";
+//var_dump($books);
+$bookslist=[];
+foreach ($result  as $value) {
+  // $arr[3] will be updated with each value from $arr...
+  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text']));
+}
 ?>
 
 
@@ -55,15 +61,21 @@ $user = $result->fetch_assoc();
         </nav>
 </header>
 </div>
-<main>
-    
-        <div class="mainpart">
-          <div class="mainbooks" style="width: 160px; ">
+
+<!-- <div class="mainbooks" style="width: 160px; ">
             <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
-
+-->
+<main>
+    
+        <div class="mainpart" style=" justify-content: space-around; display: flex;  flex-wrap: wrap;">
+        <?php
+          for ($i = 0; $i < count($bookslist); $i++) {
+            $bookslist[$i]->give_html(); 
+          }
+          ?>
         </div>
  
 
