@@ -74,9 +74,7 @@ foreach ($result  as $value) {
           }
           ?>
         </div>
-        <button onclick="myFunction()">Click me</button>
-        <a href="/bookpage.php">hello</a>
-        <button><a href="bookpage.php?data=The Great Gatsby">Log out</a></button>
+
           
     <div class="bow">
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
