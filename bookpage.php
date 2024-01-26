@@ -4,16 +4,16 @@
 session_start();
 
 $mysqli = require __DIR__ . "/database.php";
-$a=$_SESSION['Title'];
-$sql = sprintf("SELECT * FROM `BookS` WHERE title ='The Great Gatsby'");
+$a=$_REQUEST['data'];
+
+
+$sql = sprintf("SELECT * FROM `BookS` WHERE title ='$a'");
 $result = $mysqli->query($sql);
 $books = $result->fetch_assoc();
 require_once __DIR__ ."/Bookmaker.php";
-var_dump($_REQUEST["post"]);
 
 
-$book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock'], $books['Text'],$books['LANGUAGE'],$books['Price'],$books['Publisher'],$books['pbdate'],$books['DS']);
-
+$book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock'], $books['Text'],$books['LANGUAGE'],$books['Price'],$books['Publisher'],$books['pbdate'],$books['DS'],$books['img']);
 
 ?>
 
@@ -31,7 +31,7 @@ $book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock
 
 <div class="book-container">
   <div class="book-cover">
-    <img src="imgs/81WBPB-8ZmL.jpg" alt="5 Ingredients Mediterranean">
+  <img style="height: 611px;" src="imgs/<?php echo $book->getImg()?>" /> 
   </div>
   <div class="inter">
 

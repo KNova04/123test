@@ -3,17 +3,14 @@ session_start();
 
 $mysqli = require __DIR__ . "/database.php";
 
+$a=$_REQUEST['data'];
 $sql = sprintf("SELECT * FROM `BookS`");
 $result = $mysqli->query($sql);
-//$books = $result->fetch_assoc();
-
-
 require_once __DIR__ ."/Bookmaker.php";
-//var_dump($books);
 $bookslist=[];
 foreach ($result  as $value) {
   // $arr[3] will be updated with each value from $arr...
-  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null));
+  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img']));
 }
 ?>
 
@@ -77,13 +74,15 @@ foreach ($result  as $value) {
           }
           ?>
         </div>
- 
-
+        <button onclick="myFunction()">Click me</button>
+        <a href="/bookpage.php">hello</a>
+        <button><a href="bookpage.php?data=The Great Gatsby">Log out</a></button>
+          
     <div class="bow">
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
         <div class="slider">
           <div class="slids" style="width: 160px; margin-left:20px;">
-          <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook">
+          <a href="script.php?data=The Great Gatsby"><img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook"></a>
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
@@ -151,7 +150,17 @@ function changeImage(direction) {
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+function myFunction() {
+  fetch('/Applications/XAMPP/xamppfiles/htdocs/Book-Store/script.php')
+    .then(response => response.text())
+    .then(data => {
+      console.log(data);
+    });
+}
 
+
+</script>
 </html>
 
 
