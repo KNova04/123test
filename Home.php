@@ -2,8 +2,6 @@
 session_start();
 
 $mysqli = require __DIR__ . "/database.php";
-
-$a=$_REQUEST['data'];
 $sql = sprintf("SELECT * FROM `BookS`");
 $result = $mysqli->query($sql);
 require_once __DIR__ ."/Bookmaker.php";
@@ -28,7 +26,9 @@ foreach ($result  as $value) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/Home.css">
+    <style>
+    <?php include "css/Home.css" ?>
+    </style>
 </head>
 <body>
     <header>
@@ -44,7 +44,6 @@ foreach ($result  as $value) {
             </ion-icon></button>
             <button class="Log-in"><a href="logout.php">Log out</a></button>
           </div>
- 
         <nav>
             <ul>
                 <li><a href="#home">Books</a></li>
@@ -80,7 +79,7 @@ foreach ($result  as $value) {
         <button class="prev" onclick="changeImage(-1)">&#10094;</button>
         <div class="slider">
           <div class="slids" style="width: 160px; margin-left:20px;">
-          <a href="script.php?data=The Great Gatsby"><img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook"></a>
+          <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg"  alt="decentbook">
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
@@ -104,11 +103,8 @@ foreach ($result  as $value) {
             <h5> Title</h5>
             <p > DESCRIPTION </p>
           </div>
-          <div class="slids">
-            <img id="5"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
+
+
         </div>
         <button class="next" onclick="changeImage(1)">&#10095;</button>
     </div>
@@ -138,8 +134,8 @@ function changeImage(direction) {
     } else if (currentImage < 0){
         currentImage = totalImages;
     }
-    for(let i=1;i<=5;i++){
-    const imageElement1= document.getElementById(""+i);
+    for(let i=1;i<=4;i++){
+    const imageElement1= document.getElementById(i);
     imageElement1.src =a[currentImage];
 }
 

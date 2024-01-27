@@ -98,11 +98,11 @@
 
     font-family: Arial, sans-serif;
     
-    margin-left: 15vh;
+
     
   }
   .book-cover img {
-    width: 43px;
+    width: auto;
     height: 600px;
 
   }

@@ -9,6 +9,22 @@ body{
     display: flex;
     flex-direction: row;
   }
+  .mainbooks{
+    width: 233px; 
+    margin-right: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    
+  }
+  .mainbooks img{
+    margin:0;
+    width: 233px;
+    overflow: hidden;
+  }
+  
 .topnav input[type=text] {
     height: 20px;
     float:right;
@@ -228,5 +244,5 @@ h2 {
 .slids{
   text-align:center; padding: 30px;
   width: 160px;
-  margin-right: 90px;
+  margin-right: 80px;
 }

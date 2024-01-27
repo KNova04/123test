@@ -23,8 +23,13 @@ $book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Details</title>
-<link rel="stylesheet" href="css/bookpage.css">
 
+<style>
+    .book-container{
+        margin-left:15vh;
+    }
+    <?php include "css/bookpage.css" ?>
+</style>
 
 </head>
 <body>

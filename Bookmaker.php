@@ -61,7 +61,7 @@ class Bookmaker {
     public function getDsPrice(){return $this->price -($this->price*$this->DS)/100;}    
     public function getTots() {return $this->price-$this->getDsPrice();}
     public function give_html(){
-        echo "<div class='mainbooks' style='width: 160px; margin-right: 10%;' >";
+        echo "<div class='mainbooks' >";
         echo "<a href='bookpage.php?data=".$this->title."'><img class='s'id='1'src='imgs/".$this->getImg()."'alt='decentbook'></a>";
         echo "<h5>".$this->getTitle()."</h5>";
         echo "<p>".$this->getText()."</p>";
