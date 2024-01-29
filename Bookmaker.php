@@ -11,8 +11,8 @@ class Bookmaker {
     private $pbdate;
     private $DS;
     private $img;
-
-    public function __construct($title, $rating, $quantity_in_stock, $Text,$Language,$price,$pushlisher,$pbdate,$DS, $img) {
+    private $sales;
+    public function __construct($title, $rating, $quantity_in_stock, $Text,$Language,$price,$pushlisher,$pbdate,$DS, $img,$sales) {
         $this->title = $title;
         $this->rating = $rating;
         $this->quantity_in_stock = $quantity_in_stock;
@@ -24,10 +24,15 @@ class Bookmaker {
         $this->pbdate = $pbdate;
         $this->DS = $DS;
         $this->img = $img;
+        $this->sales = $sales;
     }
     public function getImg() {
 
         return $this->img.".jpg";
+    }
+    public function getSales() {
+
+        return $this->sales;
     }
 
     // Getters
@@ -61,12 +66,13 @@ class Bookmaker {
     public function getDsPrice(){return $this->price -($this->price*$this->DS)/100;}    
     public function getTots() {return $this->price-$this->getDsPrice();}
     public function give_html(){
-        echo "<div class='mainbooks' >";
-        echo "<a href='bookpage.php?data=".$this->title."'><img class='s'id='1'src='imgs/".$this->getImg()."'alt='decentbook'></a>";
-        echo "<h5>".$this->getTitle()."</h5>";
-        echo "<p>".$this->getText()."</p>";
-        echo "</div>";
+        echo "<div class='mainbooks' >
+         <a href='bookpage.php?data=".$this->title."'><img class='s'id='1'src='imgs/".$this->getImg()."'alt='decentbook'></a>
+        <h5>".$this->getTitle()."</h5>
+        <p>".$this->getText()."</p>
+         </div>";
     }
+
 
     public function ec(){
         echo $this->title;

@@ -2,14 +2,16 @@
 session_start();
 
 $mysqli = require __DIR__ . "/database.php";
-$sql = sprintf("SELECT * FROM `BookS`");
+$sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
 $result = $mysqli->query($sql);
+$range=$_SESSION['index'];
 require_once __DIR__ ."/Bookmaker.php";
 $bookslist=[];
+$plus='a';
 foreach ($result  as $value) {
-  // $arr[3] will be updated with each value from $arr...
-  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img']));
+  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img'],null));
 }
+$max=count($bookslist);
 ?>
 
 
@@ -68,45 +70,43 @@ foreach ($result  as $value) {
     
         <div class="mainpart" style=" justify-content: space-around; display: flex;  flex-wrap: wrap;">
         <?php
-          for ($i = 0; $i < count($bookslist); $i++) {
+          $checker=$max-$range;
+          if($checker>10){
+          for ($i = $range; $i < $range+10; $i++) {
             $bookslist[$i]->give_html(); 
+          }}else{
+            for ($i = $range; $i < $range+$checker; $i++) {
+              $bookslist[$i]->give_html(); 
+            }
           }
+         
           ?>
         </div>
 
-          
-    <div class="bow">
-        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-        <div class="slider">
-          <div class="slids" style="width: 160px; margin-left:20px;">
-          <img class="s "id="1"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg"  alt="decentbook">
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
-          <div class="slids">
-            <img id="2"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
-          <div class="slids">
-            <img id="3"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
-          <div class="slids">
-            <img id="4"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" >
-            <h5> title</h5>
-            <p > DESCRIPTION </p>
-          </div>
-          <div class="slids">
-            <a href="twitter.com"><img id="5"src="imgs/English_Harry_Potter_7_Epub_9781781100264.jpg" alt="decentbook" ></a>
-            <h5> Title</h5>
-            <p > DESCRIPTION </p>
-          </div>
 
+    <div class="bow">
+    
+          <?php
+          for ($i = 0; $i < 3; $i++ ) {
+          $bookslist[$i]->give_html();
+          }
+            ?>
 
         </div>
-        <button class="next" onclick="changeImage(1)">&#10095;</button>
+        
+
+        <div style="display: flex; margin-left:40%;">< <?php
+        
+        echo "<a href='sessionhandler.php?max=$max&opt=n'><button>prev</button></a>";
+        for ($i = 0; $i < count($bookslist); $i+=10 ) {
+          $count=$i/10;
+          echo "<a href='sessionhandler.php?max=$i&opt=go'><button>{$count}</button></a>";
+
+        }
+        echo "<a href='sessionhandler.php?max=$max&opt=p'><button>next</button></a>";
+        ?>
+        </div>
+        
     </div>
         
 

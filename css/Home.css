@@ -151,23 +151,23 @@ h2 {
   font-size: 1.5em;
   
 }
+p{margin-bottom: 0;}
+h5{margin-bottom: 0;}
 .t{
   display:flex;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .bow{
-  position: relative;
-  top: auto;
-  left: auto;
-    
-    background: transparent;
+    display: flex;
+    justify-content: space-between;
     border: 2px solid black;
-    backdrop-filter: blur(10px);
     border-radius: 15px;
-
+    width: 60%;
+    margin-left: 20%;
 }
-.slider img{ margin: 0; margin-right:70px; height: 250px;}
+.bow div{margin: 0;}
+.slider img{ margin: 0; }
 .slider {
   display: flex;
 
