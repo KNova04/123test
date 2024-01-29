@@ -2,10 +2,27 @@
 session_start();
 
 $mysqli = require __DIR__ . "/database.php";
-$sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
+if(isset($_REQUEST["search"])){
+  $search = $_REQUEST["search"];
+  echo 'this is search'.$search;
+
+  $sql = sprintf("SELECT * FROM `Books` WHERE title = '$search'");
+  $result = $mysqli->query($sql);
+  
+  if(!$result || $result->num_rows == 0){
+    $sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
+    $result = $mysqli->query($sql);
+  }
+}else{
+  
+  $sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
+}
+//$sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
 $result = $mysqli->query($sql);
 $range=$_SESSION['index'];
 require_once __DIR__ ."/Bookmaker.php";
+
+
 $bookslist=[];
 $plus='a';
 foreach ($result  as $value) {
@@ -37,10 +54,12 @@ $max=count($bookslist);
         <div class="topnav">
             <img src="imgs/booklogo.png"   alt="">
             <h2>Books with Anton</h2>
-            <input type="text" placeholder="Search..">
+            <form action="Home.php" method="post">
+            <input type="text"  name='search' placeholder="Search..">
             <button class="Search">
-              <ion-icon name="search-outline">
-            </ion-icon></button>
+              <ion-icon name="search-outline"></ion-icon>
+          </button>
+            </form>
             <button class="cart">
               <a href="cart.php"><ion-icon name="cart-outline"></a>
             </ion-icon></button>

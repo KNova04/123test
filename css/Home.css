@@ -4,7 +4,7 @@ body{
 }
 
 .topnav {
-    overflow: auto;
+    overflow:hidden;
     background-color: #fff;
     display: flex;
     flex-direction: row;
@@ -61,7 +61,7 @@ body{
   }
   .cart{
     background: transparent;
-    position: relative; left: 400px; top: -20px;
+    position: relative; left: 300px; top: -20px;
     margin-top: 40px;
     height: 44px;
     width: 44px;
@@ -89,7 +89,7 @@ body{
     font-weight: 500;
     margin-left: 40px;
     transition: 0.2s;
-    position: relative; left: 500px; top: 20px;
+    position: relative; left: 400px; top: 20px;
   }
   .topnav .Log-in:hover{
     background:  black;
