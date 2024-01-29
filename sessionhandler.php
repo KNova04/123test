@@ -18,4 +18,3 @@ if($_REQUEST['opt']=='go'){
 }
 //$_SESSION['index']=0;
 header("Location: index.php");
-?>

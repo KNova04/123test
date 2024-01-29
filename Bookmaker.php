@@ -12,7 +12,9 @@ class Bookmaker {
     private $DS;
     private $img;
     private $sales;
-    public function __construct($title, $rating, $quantity_in_stock, $Text,$Language,$price,$pushlisher,$pbdate,$DS, $img,$sales) {
+    private $id;
+    public function __construct($id,$title, $rating, $quantity_in_stock, $Text,$Language,$price,$pushlisher,$pbdate,$DS, $img,$sales) {
+        $this->id = $id;
         $this->title = $title;
         $this->rating = $rating;
         $this->quantity_in_stock = $quantity_in_stock;
@@ -26,6 +28,7 @@ class Bookmaker {
         $this->img = $img;
         $this->sales = $sales;
     }
+    function getid() { return $this->id;}
     public function getImg() {
 
         return $this->img.".jpg";
@@ -73,8 +76,24 @@ class Bookmaker {
          </div>";
     }
 
+    public function give_cart(){
+        echo "<div class='cart-item'>
+        <div class='item-image'>
+          <img src='imgs/".$this->getImg()."' alt='ProCase Smart Case' />
+        </div>
+        <div class='item-details'>
+          <h2>".$this->getTitle()."</h2>
 
-    public function ec(){
-        echo $this->title;
+          <p class='item-price'>Price:$".$this->getPrice().".00</p>
+          <p class='item-priceDS'>Pricewith Discount:$".$this->getDsPrice()." (".$this->getDS().")</p>
+          <p>Qty: ".$this->getQuantityInStock()."</p>
+          <p>Author: ".$this->getPushlisher()."</p>
+          <a href='deletcart.php?id=".$this->id."'><button>Delete</button></a>
+          
+          <a href='bookpage.php?data=".$this->title."'><button>Go to item</button></a>
+          </div>
+      </div>
+      " ;
     }
+    
 }

@@ -12,9 +12,8 @@ $result = $mysqli->query($sql);
 $books = $result->fetch_assoc();
 require_once __DIR__ ."/Bookmaker.php";
 
-
-$book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock'], $books['Text'],$books['LANGUAGE'],$books['Price'],$books['Publisher'],$books['pbdate'],$books['DS'],$books['img']);
-
+$id= $books["id"];
+$book=new Bookmaker($books['id'],$books['title'], $books['rating'], $books['quantity_in_stock'], $books['Text'],$books['LANGUAGE'],$books['Price'],$books['Publisher'],$books['pbdate'],$books['DS'],$books['img'],$books['sales']);
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +39,8 @@ $book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock
   </div>
   <div class="inter">
 
-      <h1 class="book-title">5 Ingredients Mediterranean: Simple Incredible Food [American Measurements] Hardcover – January 23, 2024</h1>
-    <p class="book-author">by Jamie Oliver</p>
+      <h1 class="book-title"> <?php echo $book->getTitle(); ?></h1>
+    <p class="book-author"> <?php echo $book->getPushlisher(); ?></p>
     <div class="book-rating">
         ★★★★★     <?php echo $book->getRating(); ?>
     </div>
@@ -57,16 +56,20 @@ $book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock
     <!-- Add more descriptionhere -->
     </div>
   </div>
+
+
   <div class="product-card">
     <div class="product-header">
-        <span class="original-price">$<?php echo $book->getPrice();?>.00</span>
-        <span class="hardcover-price discounted">$<?php echo $book->getTots();?></span>
-        <span class="kindle-price">$<?php echo $book->getDsPrice();?></span>
+        <span class="original-price">Price :$<?php echo $book->getPrice();?>.00</span>
+        <span class="hardcover-price discounted">Discount on item :$<?php echo $book->getTots();?></span>
+        <span class="kindle-price">Price after Discount$<?php echo $book->getDsPrice();?></span>
     </div>
     <div class="availability">
         <p>Available Instantly</p>
         <p><strong>Hardcover</strong></p>
     </div>
+
+
     <div class="buy-box">
         <div class="price-section">
             <span class="buy-new">Buy new:</span>
@@ -82,11 +85,17 @@ $book=new Bookmaker($books['title'], $books['rating'], $books['quantity_in_stock
             <select id="quantity" name="quantity">
                 <option value="1" selected>1</option>
                 <option value="2" selected>2</option>
-                <option value="5" selected>5</option>
+                <option value="3" selected>2</option>
+                <?php
+                for ($i = 5; $i <= $book->getQuantityInStock(); $i+=5){
+                    echo "<option value='$i' selected>$i</option>";
+                }
+                ?>
             </select>
         </div>
-        <button class="add-to-cart-btn">Add to Cart</button>
-        <button class="buy-now-btn">Buy Now</button>
+        <?php
+        echo "<a href='carthandler.php?id=$id'><button class='add-to-cart-btn'>Add to Cart</button></a>"
+        ?>
     </div>
 </div>
 

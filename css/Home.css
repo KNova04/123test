@@ -21,7 +21,7 @@ body{
   }
   .mainbooks img{
     margin:0;
-    width: 233px;
+    width: 100%;
     overflow: hidden;
   }
   

@@ -9,7 +9,7 @@ require_once __DIR__ ."/Bookmaker.php";
 $bookslist=[];
 $plus='a';
 foreach ($result  as $value) {
-  array_push($bookslist,new Bookmaker($value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img'],null));
+  array_push($bookslist,new Bookmaker($value['id'],$value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img'],null));
 }
 $max=count($bookslist);
 ?>
@@ -42,7 +42,7 @@ $max=count($bookslist);
               <ion-icon name="search-outline">
             </ion-icon></button>
             <button class="cart">
-              <ion-icon name="cart-outline">
+              <a href="cart.php"><ion-icon name="cart-outline"></a>
             </ion-icon></button>
             <button class="Log-in"><a href="logout.php">Log out</a></button>
           </div>
@@ -72,9 +72,11 @@ $max=count($bookslist);
         <?php
           $checker=$max-$range;
           if($checker>10){
-          for ($i = $range; $i < $range+10; $i++) {
+         for ($i = $range; $i < $range+10; $i++) {
             $bookslist[$i]->give_html(); 
-          }}else{
+          }
+        }else{
+
             for ($i = $range; $i < $range+$checker; $i++) {
               $bookslist[$i]->give_html(); 
             }
