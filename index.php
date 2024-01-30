@@ -3,7 +3,7 @@
 session_start();
 var_dump($_SESSION["user_id"]);
 if(isset($_SESSION["user_id"])){
-    if($_SESSION["user_isAdmin"]==1){header("Location: isadmin.php"); }
+    if($_SESSION["user_isAdmin"]==0){header("Location: isadmin.php"); }
     else{
     header("Location: Home.php"); 
 }

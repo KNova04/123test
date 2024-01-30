@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$bookslist=[];
+$show=true;
 $mysqli = require __DIR__ . "/database.php";
 if(isset($_REQUEST["search"])){
   $search = $_REQUEST["search"];
@@ -12,20 +13,17 @@ if(isset($_REQUEST["search"])){
   if(!$result || $result->num_rows == 0){
     $sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
     $result = $mysqli->query($sql);
-  }
+  }else{$show=false;}
 }else{
-  
-  $sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
+  $sql = sprintf("SELECT * FROM `BookS` ");
 }
-//$sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
-
 
 $result = $mysqli->query($sql);
 $range=$_SESSION['index'];
+
 require_once __DIR__ ."/Bookmaker.php";
 
 
-$bookslist=[];
 $plus='a';
 foreach ($result  as $value) {
   array_push($bookslist,new Bookmaker($value['id'],$value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img'],null));
@@ -109,32 +107,34 @@ $max=count($bookslist);
           ?>
         </div>
 
-
-    <div class="bow">
+<?php if($show): ?>
+  <div class="bow">
     
-          <?php
-          for ($i = 0; $i < 3; $i++ ) {
-          $bookslist[$i]->give_html();
-          }
-            ?>
+    <?php
+    for ($i = 0; $i < 3; $i++ ) {
+    $bookslist[$i]->give_html();
+    }
+      ?>
 
-        </div>
-        
+  </div>
+  
 
-        <div style="display: flex; margin-left:40%;">< <?php
-        
-        echo "<a href='sessionhandler.php?max=$max&opt=n'><button>prev</button></a>";
-        for ($i = 0; $i < count($bookslist); $i+=10 ) {
-          $count=$i/10;
-          echo "<a href='sessionhandler.php?max=$i&opt=go'><button>{$count}</button></a>";
+  <div style="display: flex; margin-left:40%;">< <?php
+  
+  echo "<a href='sessionhandler.php?max=$max&opt=n'><button>prev</button></a>";
+  for ($i = 0; $i < count($bookslist); $i+=10 ) {
+    $count=$i/10;
+    echo "<a href='sessionhandler.php?max=$i&opt=go'><button>{$count}</button></a>";
 
-        }
-        echo "<a href='sessionhandler.php?max=$max&opt=p'><button>next</button></a>";
-        ?>
-        </div>
-        
-    </div>
-        
+  }
+  echo "<a href='sessionhandler.php?max=$max&opt=p'><button>next</button></a>";
+  ?>
+  </div>
+  
+</div>
+<?php else: ?>
+<?php endif; ?>
+   
 
     </div>
 </main>
