@@ -19,7 +19,7 @@ if ($user) {
             session_start();
             
             session_regenerate_id();
-            $_SESSION["Index"]=0;
+            $_SESSION["index"]=0;
             $_SESSION["user_id"] = $user["userid"];
             $_SESSION["user_isAdmin"]=$user["isadmin"];
             header("Location: index.php");

@@ -4,7 +4,7 @@ session_start();
 $mysqli = require __DIR__ . "/database.php";
 if(isset($_REQUEST["search"])){
   $search = $_REQUEST["search"];
-  echo 'this is search'.$search;
+
 
   $sql = sprintf("SELECT * FROM `Books` WHERE title = '$search'");
   $result = $mysqli->query($sql);
@@ -18,6 +18,8 @@ if(isset($_REQUEST["search"])){
   $sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
 }
 //$sql = sprintf("SELECT * FROM `BookS` ORDER BY sales DESC");
+
+
 $result = $mysqli->query($sql);
 $range=$_SESSION['index'];
 require_once __DIR__ ."/Bookmaker.php";
@@ -29,6 +31,7 @@ foreach ($result  as $value) {
   array_push($bookslist,new Bookmaker($value['id'],$value['title'], $value['rating'], $value['quantity_in_stock'], $value['Text'],null,null,null,null,null,$value['img'],null));
 }
 $max=count($bookslist);
+
 ?>
 
 
@@ -57,8 +60,8 @@ $max=count($bookslist);
             <form action="Home.php" method="post">
             <input type="text"  name='search' placeholder="Search..">
             <button class="Search">
-              <ion-icon name="search-outline"></ion-icon>
-          </button>
+              <ion-icon name="search-outline">
+            </ion-icon></button>
             </form>
             <button class="cart">
               <a href="cart.php"><ion-icon name="cart-outline"></a>
@@ -93,11 +96,13 @@ $max=count($bookslist);
           if($checker>10){
          for ($i = $range; $i < $range+10; $i++) {
             $bookslist[$i]->give_html(); 
+            
           }
         }else{
 
             for ($i = $range; $i < $range+$checker; $i++) {
               $bookslist[$i]->give_html(); 
+              echo "333";
             }
           }
          

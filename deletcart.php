@@ -14,11 +14,12 @@ if(isset($_REQUEST['checkout'])){
 if ($mysqli->query($sql)) {
    printf("Table tutorials_tbl record deleted successfully.<br />");
  }
-//echo "1";
 
 if(isset($_REQUEST["checkout"])){
     header("Location: Home.php");
+
 }else{
+    
     header("Location: cart.php");
 }
 

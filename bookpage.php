@@ -80,7 +80,8 @@ $book=new Bookmaker($books['id'],$books['title'], $books['rating'], $books['quan
         <div class="shipping-location">
             <span>Ship to Albania</span>
         </div>
-        <div class="quantity-section">
+        <form action="carthandler.php?id=<?php echo $id?>" method="post">
+        <div  class="quantity-section">
             <label for="quantity">Quantity:</label>
             <select id="quantity" name="quantity">
                 <option value="1" selected>1</option>
@@ -93,9 +94,10 @@ $book=new Bookmaker($books['id'],$books['title'], $books['rating'], $books['quan
                 ?>
             </select>
         </div>
-        <?php
-        echo "<a href='carthandler.php?id=$id'><button class='add-to-cart-btn'>Add to Cart</button></a>"
-        ?>
+        
+        <button class='add-to-cart-btn'>Add to Cart</button></a>"
+        
+        </form>
     </div>
 </div>
 

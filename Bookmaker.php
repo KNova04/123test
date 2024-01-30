@@ -75,6 +75,7 @@ class Bookmaker {
         <p>".$this->getText()."</p>
          </div>";
     }
+    public function r() {echo $this->title;}
 
     public function give_cart(){
         echo "<div class='cart-item'>
