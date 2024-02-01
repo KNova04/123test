@@ -100,7 +100,7 @@ $max=count($bookslist);
 
             for ($i = $range; $i < $range+$checker; $i++) {
               $bookslist[$i]->give_html(); 
-              echo "333";
+              echo "";
             }
           }
          
@@ -119,7 +119,7 @@ $max=count($bookslist);
   </div>
   
 
-  <div style="display: flex; margin-left:40%;">< <?php
+  <div class="und">< <?php
   
   echo "<a href='sessionhandler.php?max=$max&opt=n'><button>prev</button></a>";
   for ($i = 0; $i < count($bookslist); $i+=10 ) {

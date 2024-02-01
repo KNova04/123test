@@ -60,18 +60,18 @@ body{
     align-items: center;
   }
   .cart{
-    background: transparent;
+
     position: relative; left: 300px; top: -20px;
     margin-top: 40px;
-    height: 44px;
-    width: 44px;
+    height: 45px;
+    width: 46px;
     background: black;
     font-size: 2em;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     z-index: 1;
   }
@@ -205,19 +205,31 @@ h5{margin-bottom: 0;}
   transform: translateY(-50%);
 }
 
-
-
-
-
-
-
-
-
-
 .randoms{
     display: flex;
     flex-direction: column;
 
+}
+
+.und{
+  display: flex;
+	justify-content: center;
+ 
+}
+
+.und button{
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.und button:hover {
+  background-color: black;
+  color: #fff;
 }
 
 .randombook{
@@ -228,6 +240,7 @@ h5{margin-bottom: 0;}
     margin-right: 50px;
     width: 500px;
     height: 300px;
+    
 }
 #p{
     gap: 20px; 
@@ -245,4 +258,54 @@ h5{margin-bottom: 0;}
   text-align:center; padding: 30px;
   width: 160px;
   margin-right: 80px;
+}
+
+.dd{
+  display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#name{
+  position: relative;
+  left: 25%;
+  width: 50% ;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#text{
+  position: relative;
+  left: 25%;
+  width: 50% ;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#sub{
+  position: relative;
+  left: 25%;
+  width: 52% ;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#sub:hover {
+  background-color: black;
+  color: #fff;
 }

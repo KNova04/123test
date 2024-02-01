@@ -1,3 +1,122 @@
+.topnav {
+  overflow:hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.topnav input[type=text] {
+  height: 20px;
+  float:right;
+  padding: 10px;
+  margin-top: 40px;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 50%;
+  width: 750px;
+  position: relative; top:20px;
+  
+  border-color: #000;
+
+}
+
+.topnav input[type=text], .Search{
+  margin: 0;
+  position: relative; left: 295px;
+}
+.Search{
+  position: relative; top: -20px;
+  height: 44px;
+  width: 50px;
+  margin-top: 40px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 1;
+  background: black;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart{
+
+  position: relative; left: 300px; top: -20px;
+  margin-top: 40px;
+  height: 45px;
+  width: 46px;
+  background: black;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.Log-in{
+  width: 100px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.2s;
+  position: relative; left: 400px; top: 20px;
+}
+.topnav .Log-in:hover{
+  background:  black;
+  color: white;
+}
+
+.topnav img{margin: 0; width: 80px; height: 80px; background: white;}
+.topnav h2{position: relative; top: 5px; left: 30px;}
+.headerimg{margin: 0; width: 1000px;}
+header{  max-width:100vw}
+nav {
+background-color: #fff; 
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+display: flex;
+justify-content: space-around;
+}
+
+
+li:last-child {
+  margin-right: 0;
+}
+main{overflow: hidden;}
+li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s; 
+}
+
+li a:hover {
+  background-color: #fff; 
+  color: #000; 
+  border-color: #000; 
+}
 .checkout {
     background-color: #fff;
     padding: 20px;

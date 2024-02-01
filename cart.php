@@ -31,10 +31,38 @@ foreach ($result  as $books) {
     </style>
 </head>
 <body>
+<header>
+        <div class="topnav">
+            <img src="imgs/booklogo.png"   alt="">
+            <h2>Books with Anton</h2>
+            <form action="Home.php" method="post">
+            <input type="text"  name='search' placeholder="Search..">
+            <button class="Search">
+              <ion-icon name="search-outline">
+            </ion-icon></button>
+            </form>
+            <button class="cart">
+              <a href="cart.php"><ion-icon name="cart-outline"></a>
+            </ion-icon></button>
+            <button class="Log-in"><a href="logout.php">Log out</a></button>
+          </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Books</a></li>
+                <li><a href="#about">Fiction</a></li>
+                <li><a href="#services">Nonfiction</a></li>
+                <li><a href="#contact">eBooks</a></li>
+                <li><a href="#home">Audiobooks</a></li>
+                <li><a href="#about">Teens & YA</a></li>
+                <li><a href="#services">Kids</a></li>              
+            </ul>
+        </nav>
+</div>
+</header>
 
 
 <main>
-<div class="shopping-cart">
+1<div class="shopping-cart">
   <h1>Shopping Cart</h1>
   <?php
   for ($i = 0; $i < count($CartList); $i++) { 
@@ -63,5 +91,7 @@ foreach ($result  as $books) {
   <a href="deletcart.php?checkout=1"><button class="checkout-button">Proceed to checkout</button></a>
 </div>
 </main>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
