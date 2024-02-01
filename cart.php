@@ -34,7 +34,7 @@ foreach ($result  as $books) {
 
 
 <main>
-1<div class="shopping-cart">
+<div class="shopping-cart">
   <h1>Shopping Cart</h1>
   <?php
   for ($i = 0; $i < count($CartList); $i++) { 

@@ -4,6 +4,8 @@
 session_start();
 
 $mysqli = require __DIR__ . "/database.php";
+
+
 $sql = "INSERT INTO cart (userId, bookid, saleDate,qantaty)
 VALUES (?, ?, ?,?)";
         

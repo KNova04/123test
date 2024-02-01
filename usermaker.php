@@ -30,9 +30,10 @@ class Users{
         <p>Name :".$this->getName()."    .</p>
         <p>Email :".$this->getEmail()."    .</p>
         <p>Age :".$this->getAge()."    .</p>
-        <button class='editter_button'>".$this->adminNT()."</button>
-        <button class='editter_button'>Delet</button>
-        <a href='checkhistory.php'><button class='editter_button'>checkhistroy</button></a>
+        
+        <a href='changestatus.php?id=".$this->getId()."&state=".$this->isadmin."'><button class='editter_button'>".$this->adminNT()."</button> </a>
+        <a href='deletuser.php?id=".$this->getId()."'><button class='editter_button'>Delete</button></a>
+        <a href='checkhistory.php?name=".$this->getName()."'><button class='editter_button'>Check history</button></a>
         </div>";
     }
 
