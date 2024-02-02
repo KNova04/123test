@@ -10,8 +10,9 @@ foreach ($result as $row){
     array_push( $editorlist,new editoer($row['saleDate'],$row['title'],$row['Price'],$row['quantity']));
     
 }
-try{
-$time=$editorlist[0]->get_Date();}catch(Exception $e){echo $e;}
+if(count($editorlist)> 0){
+  $time=$editorlist[0]->get_Date();
+}else{$time=0;}
 ?>
 <!DOCTYPE html>
 <html lang="en">
