@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact-Antn</title>
-    <link rel="stylesheet" href="css/Home.css">
+    
     <style>
-        .dd{
-  display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
+        <?php include "css/Home.css" ?>
     </style>
 </head>
 <body>
     <header>
         <div class="topnav">
-            <img src="imgs/booklogo.png"   alt="">
+            <a href="Home.php"><img src="imgs/booklogo.png"   alt=""></a>
             <h2>Books with Anton</h2>
             
           </div>
@@ -41,10 +37,26 @@
         style="margin-top: 20px;" class="entryfiled" 
          name="E-mail" placeholder="E-mail" id="name">
          <br>
-        <textarea id="text" name="text" rows="5" cols="60"></textarea>
+        <textarea  style="resize: none;" id="text" name="text" rows="5" cols="60"></textarea>
         <br>
         <button type="submit" id="sub">Submit</button>
     </div>
-    
+
+    <footer style="position: relative; top: 459px;">
+    <div class="footer-content">
+      <div class="footer-section about">
+       <a href="About.php"><h3>About Us</h3></a> 
+        <p>Anton Book-Store...</p>
+      </div>
+      <div class="footer-section contact">
+       <a href="contact.php"><h3>Contact Us</h3></a> 
+        <p>Email: anton@books.com</p>
+        <p>Phone: +1 123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Anton Book-Store. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
