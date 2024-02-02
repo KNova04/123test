@@ -10,7 +10,6 @@ $DS=0;
 
 $result = $mysqli->query($sql);
 require_once __DIR__ ."/Bookmaker.php";
-//var_dump($result);
 $CartList=[];
 foreach ($result  as $books) {
   array_push($CartList,new Bookmaker($books['id'],$books['title'], $books['rating'], $books['qantaty'], $books['Text'],$books['LANGUAGE'],$books['Price'],$books['Publisher'],$books['pbdate'],$books['DS'],$books['img'],$books['sales']));
@@ -62,7 +61,7 @@ foreach ($result  as $books) {
 
 
 <main>
-1<div class="shopping-cart">
+<div class="shopping-cart">
   <h1>Shopping Cart</h1>
   <?php
   for ($i = 0; $i < count($CartList); $i++) { 
@@ -73,20 +72,20 @@ foreach ($result  as $books) {
   }
   ?>
     <div class="cart-total">
-        <span>Subtotal (1 item):</span><span>$<?php echo $total;?></span>
+        <span>Subtotal (<?php echo count($CartList);?> item):</span><span>$<?php echo $total;?></span>
     </div>
 </div>
 
 <div class="checkout">
     <div class="total">
-        total (1 item): $<?php echo $total;?>
+        Total (<?php echo count($CartList);?> item): $<?php echo $total;?>
     </div>
     <div class="discount">
-    discount (1 item): $<?php echo $DS;?>
+    Discount (<?php echo count($CartList);?> item): $<?php echo $DS;?>
   </div>
 
 <div class="subtotal">
-    Subtotal (1 item): $<?php echo $total-$DS;?>
+    Subtotal (<?php echo count($CartList);?> item): $<?php echo $total-$DS;?>
   </div>
   <a href="deletcart.php?checkout=1"><button class="checkout-button">Proceed to checkout</button></a>
 </div>
