@@ -120,13 +120,13 @@ $max=count($bookslist);
 
   <div class="und"> <?php
   
-  echo "<a href='sessionhandler.php?max=$max&opt=n'><button>prev</button></a>";
+  echo "<a href='sessionhandler.php?max=$max&opt=p'><button>prev</button></a>";
   for ($i = 0; $i < count($bookslist); $i+=10 ) {
     $count=$i/10;
     echo "<a href='sessionhandler.php?max=$i&opt=go'><button>{$count}</button></a>";
 
   }
-  echo "<a href='sessionhandler.php?max=$max&opt=p'><button>next</button></a>";
+  echo "<a href='sessionhandler.php?max=$max&opt=n'><button>next</button></a>";
   ?>
   </div>
   
