@@ -29,9 +29,23 @@
         <p>Met Shehu && Kastriot Tron
         </p>
     </div>
+    
     <footer>
-        &copy; 2023 Books with Anton
-    </footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+       <a href="About.php"><h3>About Us</h3></a> 
+        <p>Anton Book-Store...</p>
+      </div>
+      <div class="footer-section contact">
+       <a href="contact.php"><h3>Contact Us</h3></a> 
+        <p>Email: anton@books.com</p>
+        <p>Phone: +1 123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Anton Book-Store. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

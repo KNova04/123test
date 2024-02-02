@@ -24,7 +24,7 @@
         <nav class="nav">
             <a href="#">Home</a>
             <a href="About.html">About Us</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
             <button class="Log-in">Log-in</button>
         </nav>
     </header>

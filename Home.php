@@ -68,7 +68,7 @@ $max=count($bookslist);
           </div>
         <nav>
             <ul>
-                <li><a href="#home">Books</a></li>
+                <li><a href="contact.html">Books</a></li>
                 <li><a href="#about">Fiction</a></li>
                 <li><a href="#services">Nonfiction</a></li>
                 <li><a href="#contact">eBooks</a></li>
@@ -100,7 +100,6 @@ $max=count($bookslist);
 
             for ($i = $range; $i < $range+$checker; $i++) {
               $bookslist[$i]->give_html(); 
-              echo "";
             }
           }
          
@@ -119,7 +118,7 @@ $max=count($bookslist);
   </div>
   
 
-  <div class="und">< <?php
+  <div class="und"> <?php
   
   echo "<a href='sessionhandler.php?max=$max&opt=p'><button>prev</button></a>";
   for ($i = 0; $i < count($bookslist); $i+=10 ) {
@@ -136,11 +135,27 @@ $max=count($bookslist);
 <?php endif; ?>
    
 
-    </div>
+</div>
 </main>
 
 </div>
 
+<footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+       <a href="About.php"><h3>About Us</h3></a> 
+        <p>Anton Book-Store...</p>
+      </div>
+      <div class="footer-section contact">
+       <a href="contact.php"><h3>Contact Us</h3></a> 
+        <p>Email: anton@books.com</p>
+        <p>Phone: +1 123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Anton Book-Store. All rights reserved.</p>
+    </div>
+  </footer>
 
 
 </body>
