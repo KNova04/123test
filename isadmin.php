@@ -6,7 +6,7 @@ $result = $mysqli->query($sql);
 require_once __DIR__ ."/usermaker.php";
 $users=[];
 foreach ($result  as $value) {
-  array_push($users,new Users($value['userid'],$value['name'],$value['email'],$value['isadmin'],$value['age']));
+  array_push($users,new Users($value['userid'],$value['name'],$value['email'],$value['isadmin'],$value['age'],$value['Contacted']));
 }
 
     
