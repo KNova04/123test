@@ -27,6 +27,13 @@ class Users{
             return "make admin";
         }
     }
+    public function givebutton(){
+        if($this->contact==1){
+            return "<a href='checkComplanys.php?id=".$this->getId()."'><button class='editter_button'>CheckHistory</button></a>";
+        }else{
+            return "";
+        }
+    }
     public function GiveCard(){
         echo "<div class='card'>
         <p>Name :".$this->getName()."    .</p>
@@ -36,7 +43,8 @@ class Users{
         <a href='changestatus.php?id=".$this->getId()."&state=".$this->isadmin."'><button class='editter_button'>".$this->adminNT()."</button> </a>
         <a href='deletuser.php?id=".$this->getId()."'><button class='editter_button'>Delete</button></a>
         <a href='checkhistory.php?name=".$this->getName()."'><button class='editter_button'>Check history</button></a>
-        <a href='CheckComplanyste.php?name=".$this->getName()."'><button class='editter_button'>Check history</button></a>
+        ".$this->givebutton()."
+        
         </div>";
     }
 

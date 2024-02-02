@@ -29,7 +29,7 @@
             </ul>
         </nav>
     </header>
-    <div class="dd">
+    <form class="dd" action="contacthandler.php" method='post'>
         <input type="text" 
         style="margin-top: 20px;" class="entryfiled" 
          name="Name" placeholder="Name" id="name">
@@ -40,7 +40,7 @@
         <textarea  style="resize: none;" id="text" name="text" rows="5" cols="60"></textarea>
         <br>
         <button type="submit" id="sub">Submit</button>
-    </div>
+</form>
 
     <footer style="position: relative; top: 459px;">
     <div class="footer-content">
