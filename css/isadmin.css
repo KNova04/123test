@@ -1,0 +1,101 @@
+.panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color:black;
+    padding: 20px;
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.panel.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.log-out {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color:white;
+    color: gray;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition:  0.3s ease;
+}
+
+.log-out:hover {
+    background-color:gray;
+}
+
+.toggle-panel-btn button{
+    position: relative;
+    left: 10px;
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color:black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition:  0.3s ease;
+}
+
+.toggle-panel-btn button:hover{
+    background-color: white;
+    border:1px solid black;
+    color: #000;
+}
+.tabel{
+    color: white;
+    background-color:black;
+	display: flex;
+}
+       
+.card {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.info-column {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.value {
+    margin: 0;
+}
+
+.editter_button  {
+    padding: 10px 15px;
+    background-color: black;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100; 
+    border-radius: 10px;
+  }
+  
+  .editter_button:hover {
+    background-color: white;
+    color: #000; 
+  }

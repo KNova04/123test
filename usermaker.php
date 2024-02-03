@@ -36,16 +36,26 @@ class Users{
     }
     public function GiveCard(){
         echo "<div class='card'>
-        <p>Name :".$this->getName()."    .</p>
-        <p>Email :".$this->getEmail()."    .</p>
-        <p>Age :".$this->getAge()."    .</p>
-        
-        <a href='changestatus.php?id=".$this->getId()."&state=".$this->isadmin."'><button class='editter_button'>".$this->adminNT()."</button> </a>
-        <a href='deletuser.php?id=".$this->getId()."'><button class='editter_button'>Delete</button></a>
-        <a href='checkhistory.php?name=".$this->getName()."'><button class='editter_button'>Check history</button></a>
-        ".$this->givebutton()."
-        
+            <div class='info-column'>
+                <p class='label'>Name:</p>
+                <p class='value'>".$this->getName()."</p>
+            </div>
+            <div class='info-column'>
+                <p class='label'>Email:</p>
+                <p class='value'>".$this->getEmail()."</p>
+            </div>
+            <div class='info-column'>
+                <p class='label'>Age:</p>
+                <p class='value'>".$this->getAge()."</p>
+            </div>
+            
+            <a href='changestatus.php?id=".$this->getId()."&state=".$this->isadmin."'><button class='editter_button'>".$this->adminNT()."</button></a>
+            <a href='deletuser.php?id=".$this->getId()."'><button class='editter_button'>Delete</button></a>
+            <a href='checkhistory.php?name=".$this->getName()."'><button class='editter_button'>Check history</button></a>
+            ".$this->givebutton()."
         </div>";
     }
+    
+    
 
 }

@@ -19,22 +19,33 @@ foreach ($result  as $value) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .tabel{display: flex; background-color: gray;flex-direction: column; justify-content: space-evenly;}
-        .editter_button{width: 100; border-radius: 10px;}
-        .card{display: flex;}
+        <?php include "css/isadmin.css" ?>
     </style>
 </head>
 <body>
-<button class="Log-in"><a href="logout.php">Log out</a></button>
-<div class="tabel">
+<div class="toggle-panel-btn" onclick="togglePanel()"><button>More</button></div>
 
-<?php
+<div class="panel" id="myPanel">
 
-foreach ($users  as $instance) {
-    $instance->GiveCard();
+    <a href="logout.php"><button class="log-out">Log out</button></a>
+
+</div>
+
+<div class="table">
+    <?php
+    foreach ($users as $instance) {
+        $instance->GiveCard();
+    }
+    ?>
+</div>
+
+<script>
+    function togglePanel() {
+    var panel = document.getElementById("myPanel");
+    panel.classList.toggle("active");
 }
 
-?>
-</div>
+</script>
 </body>
 </html>
+
