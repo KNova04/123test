@@ -23,9 +23,9 @@ class ContactCard{
     public function giveHtml(){echo "    
         <div style='width ='100px height=100px '>
         <p>--------------------</p>
-        <p>".$this->getname()."</p>
-        <p>".$this->getEmail()."</p>
-        <p>".$this->getText()."</p>
+        <p>NAME:".$this->getname()."</p>
+        <p>EMAIL:".$this->getEmail()."</p>
+        <p>TEXT:".$this->getText()."</p>
         <p>--------------------</p>
         </div>
   ";}
