@@ -22,7 +22,6 @@
             "Unlocking Worlds, One Page at a Time –
              Your Online Haven for Endless Stories!"</h2>
         <nav class="nav">
-            <a href="#">Home</a>
             <a href="About.html">About Us</a>
             <a href="contact.php">Contact</a>
             <button class="Log-in">Log-in</button>
