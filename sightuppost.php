@@ -51,7 +51,6 @@ if ($stmt->execute()) {
     $_SESSION["user_id"] = $user["userid"];
     $_SESSION["user_isAdmin"]=$user["isadmin"];
     header("Location: index.php");
-    header("Location: Home.php");
     exit;
     
 } else {
