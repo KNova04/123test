@@ -92,6 +92,8 @@ $max=count($bookslist);
         <?php
           $checker=$max-$range;
           if($checker>10){
+
+
          for ($i = $range; $i < $range+10; $i++) {
             $bookslist[$i]->give_html(); 
             

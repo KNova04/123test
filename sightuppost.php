@@ -44,6 +44,13 @@ $stmt->bind_param("sss",
                   
 if ($stmt->execute()) {
     echo "its working yay";
+    session_start();
+            
+    session_regenerate_id();
+    $_SESSION["index"]=0;
+    $_SESSION["user_id"] = $user["userid"];
+    $_SESSION["user_isAdmin"]=$user["isadmin"];
+    header("Location: index.php");
     header("Location: Home.php");
     exit;
     

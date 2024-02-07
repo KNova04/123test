@@ -12,7 +12,7 @@ $sql = "DELETE  FROM Users WHERE userid=$user";
  
  
  
-  
+
  
 header("Location: isadmin.php");
 
